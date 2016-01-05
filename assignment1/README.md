@@ -4,7 +4,7 @@ A CLI Utilities Boilerplate
 
 This is a CLI Utilities library for Node.js submitted as [Assignment 1](http://courses.codepath.com/courses/nodejs_fast_track/unit/1#!assignment) for CodePath.
 
-Time spent: [4]
+Time spent: [4 hrs]
 
 Completed:
 
