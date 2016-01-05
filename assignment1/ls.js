@@ -1,35 +1,56 @@
 #!/usr/bin/env node
-var fs = require('pn/fs')
-var path = require('path')
-var lodash = require('lodash')
-var dir = require('yargs').default('dir', __dirname).argv;
 
-var recursive = process.argv.length > 3 ? process.argv[3] : '';
+"use strict";
 
-async function ls(rootPath,option){
-   try {
-     	if(fs.statSync(rootPath).isFile()){
- 			return [rootPath]
- 		} 
-     	var fileNames = await (fs.readdir(rootPath))
-     	if (option == '-R') {
-	     	var lspromises = []
-	     	 for (var fileName of fileNames) {
-	     	 	var filePath = path.join(rootPath, fileName)
-			 	var promise = ls(filePath);
-			    lspromises.push(promise);
-	    	}
-	     	return lodash.flatten(await (Promise.all(lspromises)));
-     	}
-     	else {
-     		return [fileNames];
-     	}
-    	
+let fs = require('pn/fs')
+let path = require('path')
+let _ = require('lodash')
 
+if (process.argv.length < 3) {
+        console.error('Usage: ls.js <file name> <options>');
+        process.exit(1);
+}
+
+var rootPath = process.argv[2]
+var param
+var recursive = false
+
+if (process.argv.length == 4)
+{
+    var param = process.argv[3]
+    if (param == '-R')
+    {
+        recursive = false
+    }
+}
+
+
+function ls(rootPath, recursive)
+{
+     try 
+     {
+        let lspromises = []
+
+        if(fs.statSync(rootPath).isFile())
+        {
+            console.log(rootPath)
+            return [rootPath]
+        }
+     
+        fs.readdir(rootPath).then(function(fileNames)
+        {
+             for (let fileName of fileNames) 
+             {
+                let filePath = path.join(rootPath, fileName)
+                let promise = ls(filePath, recursive)
+                lspromises.push(promise)
+            }
+        })
+        
+        return   _.flatten(Promise.all(lspromises))
     } catch (e) {
         console.log(e.stack)
     }
 }
 
-
-ls(dir,recursive).then(function(data){console.log(data)});
+ls(rootPath, recursive)
