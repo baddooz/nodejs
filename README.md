@@ -18,4 +18,4 @@ Completed:
 * [] Optional: `-h` argument prints CLI API
 
 Walkthrough Gif:
-https://raw.githubusercontent.com/baddooz/nodejs/master/Walkthrough.gif
+![alt tag](https://raw.githubusercontent.com/baddooz/nodejs/master/Walkthrough.gif)
