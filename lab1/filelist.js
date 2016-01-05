@@ -15,7 +15,7 @@ async function ls(rootPath){
 		 	 	 	let promise = ls(filePath)
 		    	 	lspromises.push(promise)
     	}
-    	 return lodash.flatten(await Promise.all(lspromises))
+    	return lodash.flatten(await Promise.all(lspromises))
 
     } catch (e) {
         console.log(e.stack)
