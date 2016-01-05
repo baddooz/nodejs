@@ -1,0 +1,24 @@
+{
+  "name": "unit1_lab",
+  "version": "1.0.0",
+  "description": "lab exercise 1",
+  "main": "index.js",
+  "dependencies": {
+    "lodash": "^3.10.1",
+    "pn": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baddooz/nodejs.git"
+  },
+  "author": "Balaji Subramaniam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/baddooz/nodejs/issues"
+  },
+  "homepage": "https://github.com/baddooz/nodejs#readme"
+}
