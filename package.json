@@ -1,0 +1,19 @@
+{
+  "name": "assignment1",
+  "version": "1.0.0",
+  "description": "This is a Proxy Server for Node.js submitted as the [pre-work](http://courses.codepath.com/snippets/intro_to_nodejs/prework) requirement for CodePath.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baddooz/nodejs.git"
+  },
+  "author": "Balaji Subramaniam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/baddooz/nodejs/issues"
+  },
+  "homepage": "https://github.com/baddooz/nodejs#readme"
+}
