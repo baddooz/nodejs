@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env babel-node
 
 "use strict";
 
@@ -12,23 +12,23 @@ if (process.argv.length < 3) {
 
 var rootPath = process.argv[2];
 
-function rm(rootPath)
+async function rm(rootPath)
 {
         let lspromises = []
-        fs.stat(rootPath).then(function (data){
+        let data = await fs.stat(rootPath)
         if(data.isFile()){
            console.log("r ... "+rootPath)
-             fs.unlink(rootPath).then(console.log("r ..."+rootPath))
+           let data = await fs.unlink(rootPath)
         }
         else{
-         fs.readdir(rootPath).then(function(fileNames){
+        	 let fileNames =await fs.readdir(rootPath)
              for (let fileName of fileNames) 
              {
                 let filePath = path.join(rootPath, fileName)
-                let promise =  rm(filePath)
+               await rm(filePath)
             }
-               fs.rmdir(rootPath).then(console.log("r ... "+rootPath))
-        })}})
+            fs.rmdir(rootPath).then(console.log("r ... "+rootPath))
+        }
 }
 
 rm(rootPath)
