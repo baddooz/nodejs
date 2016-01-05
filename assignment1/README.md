@@ -18,4 +18,4 @@ Completed:
 
 Walkthrough Gif:
 
-![alt tag](https://raw.githubusercontent.com/baddooz/nodejs/master/assignment1/CLIUtilies_Walkthrough.gif)
+![alt tag](https://raw.githubusercontent.com/baddooz/nodejs/master/assignment1/CLIUtilies_Walkthrough_1.gif)
