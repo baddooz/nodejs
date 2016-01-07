@@ -1,0 +1,18 @@
+{
+  "name": "client",
+  "version": "1.0.0",
+  "description": "drop box client",
+  "main": "client.js",
+  "scripts": {
+    "client": "nodemon --exec babel-node -- --optional strict --stage 1 -- client.js"
+  },
+  "author": "Balaji Subramaniam",
+  "license": "ISC",
+  "dependencies": {
+    "mkdirp": "^0.5.1",
+    "nssocket": "^0.6.0",
+    "request": "^2.67.0",
+    "songbird": "^1.0.1",
+    "tuple": "0.0.1"
+  }
+}
