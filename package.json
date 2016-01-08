@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/baddooz/nodejs/issues"
   },
-  "homepage": "https://github.com/baddooz/nodejs#readme"
+  "homepage": "https://github.com/baddooz/nodejs#readme",
+  "dependencies": {
+    "express": "^4.13.3",
+    "morgan": "^1.6.1"
+  }
 }
