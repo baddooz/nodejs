@@ -32,25 +32,14 @@ outbound.data('filesync',function (data) {
 		fs.promise.unlink(argv.clientdir+filePath)
 		.then(stat => console.log(argv.clientdir+filePath, ' deleted'))
 	}
-	else if (jsondata.action === 'addDir') {
-		// this is never called
-		console.log('adding dir')
-		let pathWithoutFileName = path.resolve(path.join(argv.clientdir,filePath.substr(0,filePath.lastIndexOf(path.sep))));
-		let localfileName = path.resolve(path.join(pathWithoutFileName,filePath.substr(filePath.lastIndexOf(path.sep)+1)));
-		console.log('dirname = '+pathWithoutFileName +' to be created')
-		let index = pathWithoutFileName.startsWith(path.sep) ? 1:0;
-		fs.access(pathWithoutFileName,fs.F_OK).then(createDirRecursively(pathWithoutFileName,index)).catch(function() {
-			fs.mkdir(dir)
-			return createDir(dirName,index+1);
-		});
-
-	} else {
+	else {
 		console.log('Downloading the file ', filePath)
 		let pathWithoutFileName = path.resolve(path.join(argv.clientdir,filePath.substr(0,filePath.lastIndexOf(path.sep))));
 		let localfileName = path.resolve(path.join(pathWithoutFileName,filePath.substr(filePath.lastIndexOf(path.sep)+1)));
 
 		console.log("dir name "  + pathWithoutFileName + " fileName = " + localfileName);
-		async()=>{ await createDir(pathWithoutFileName);}
+		//async()=>{ await createDir(pathWithoutFileName);}
+		createDirRecursively(pathWithoutFileName,1)
 
 		let options = {
 			url: 'http://127.0.0.1:8000/'+filePath,

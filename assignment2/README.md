@@ -2,7 +2,7 @@
 
 This is a basic Dropbox clone to sync files across multiple remote folders.
 
-Time spent: `<Number of hours spent>`
+Time spent: `<5>`
 
 ### Features
 
@@ -10,15 +10,15 @@ Time spent: `<Number of hours spent>`
 
 - [x] Walkthrough Gif embedded in README
 - [x] README `Time spent:` includes the number of hours spent on the assignment
-- [ ] Client can make GET requests to get file or directory contents
-- [ ] Client can download a directory as an archive
-- [ ] Client can make HEAD request to get just the GET headers 
-- [ ] Client can make PUT requests to create new directories and files with content
-- [ ] Client can make POST requests to update the contents of a file
-- [ ] Client can make DELETE requests to delete files and folders
-- [ ] Server will serve from `--dir` or cwd as root
-- [ ] Server will sync `HTTP` modifications over TCP to the Client
-- [ ] Server will sync watched file modifications (e.g., `fs.watch`) over TCP to the Client
+- [X] Client can make GET requests to get file or directory contents
+- [X] Client can download a directory as an archive
+- [X] Client can make HEAD request to get just the GET headers 
+- [X] Client can make PUT requests to create new directories and files with content
+- [X] Client can make POST requests to update the contents of a file
+- [X] Client can make DELETE requests to delete files and folders
+- [X] Server will serve from `--dir` or cwd as root
+- [X] Server will sync `HTTP` modifications over TCP to the Client
+- [X] Server will sync watched file modifications (e.g., `fs.watch`) over TCP to the Client
 
 ### Optional
 
