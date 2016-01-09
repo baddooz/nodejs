@@ -35,6 +35,6 @@ Time spent: `<5>`
 ### Walkthrough
 
 `<Add your Walkthrough Gif here (by updating the image URL)>`
-![alt tag]((https://raw.githubusercontent.com/baddooz/nodejs/master/assignment2/DropboxDemo.gif)
+![alt tag](https://raw.githubusercontent.com/baddooz/nodejs/master/assignment2/DropboxDemo.gif)
 
 
