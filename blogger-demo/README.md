@@ -32,4 +32,4 @@ Optional
 Walkthrough
 
 Walkthrough Gif:
-![alt tag](https://raw.githubusercontent.com/baddooz/nodejs/master/Walkthrough.gif)
+![alt tag](https://raw.githubusercontent.com/baddooz/nodejs/master/blogger-demo/BloggerDemo.gif)
