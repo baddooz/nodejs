@@ -1,8 +1,10 @@
 let LocalStrategy = require('passport-local').Strategy
 let nodeifyit = require('nodeifyit')
-let User = require('../user')
+let User = require('../models/user')
 
-const usernameRegEx = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).*','g')
+const passwordRegEx = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).*','g')
+const usernameRegEx = new RegExp('(?=.*[a-zA-Z]{2,})','g')
+
 
 module.exports = (app) => {
   let passport = app.passport
@@ -63,17 +65,25 @@ passport.use('local-signup', new LocalStrategy({
     failureFlash: true,
     passReqToCallback: true
   }, nodeifyit(async (req,email,password) => {
-    //return [false, {message: 'Missing Mandatory field(s)'}]
     let {username,blogname,blogdescription} = req.body;
     console.log(" password =  "+password +" email = "+email + " username = " + username +" blogname = " + blogname + " blogdescription = "+blogdescription)
     if (password === '' || username === '' || email === '' || password.trim() == '' || username.trim() === '' || email.trim() === '') {
       return [false, {message: 'Missing Mandatory field(s)'}]
     }
     username = username.trim()
-    if (username.length <=4 || usernameRegEx.test(username) == false) {
-      console.log("username = "+username+" len = " + username.length + " valid? " + usernameRegEx.test(username))
-      return [false, {message: 'Username: Minimum length: 4 ,at least 1 uppercase, 1 lowercase and a number'}]
+    password = password.trim()   
+    if (username.length <=5 || usernameRegEx.test(username) == false) {
+            console.log("11username = "+username+" len = " + username.length + " valid? " + usernameRegEx.test(username))
+
+      return [false, {message: 'username: Minimum length: 5 ,at least 2 characters'}]
+    }    
+
+
+    if (password.length <=4 || passwordRegEx.test(password) == false) {
+      console.log("username = "+password+" len = " + password.length + " valid? " + passwordRegEx.test(password))
+      return [false, {message: 'password: Minimum length: 4 ,at least 1 uppercase, 1 lowercase and a number'}]
     }
+
     username = username.toLowerCase()
     if (await User.promise.findOne({username})) {
       return [false, {message: 'That username is already taken.'}]

@@ -6,3 +6,5 @@
 /authenticator.ns
 /local.0
 /local.ns
+/mongodb-data
+/uploads
