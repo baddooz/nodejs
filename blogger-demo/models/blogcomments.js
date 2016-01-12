@@ -1,15 +1,15 @@
 let mongoose = require('mongoose')
 
 let BlogCommentsSchema = new mongoose.Schema({
-  content: {
+  comment: {
     type: String,
     required: true
   },
   user: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User'
+    ref: 'user'
   },
-  post: {
+  blog: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'blog'
   },
@@ -19,4 +19,4 @@ let BlogCommentsSchema = new mongoose.Schema({
   }
 })
 
-module.exports = mongoose.model('blogcomment', BlogCommentsSchema)
+module.exports = mongoose.model('blogcomments', BlogCommentsSchema)

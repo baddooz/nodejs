@@ -10,7 +10,7 @@ let blogSchema = mongoose.Schema({
   blogdescription: {
   	type: String,
   	required: true},
-  	image:{
+  image:{
   		data: Buffer,
   		contentType: String
   	},
@@ -20,7 +20,7 @@ let blogSchema = mongoose.Schema({
     },
     comments: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Comment'
+        ref: 'blogcomments'
     }],
     created_at: {
         type: Date,

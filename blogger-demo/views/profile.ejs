@@ -35,6 +35,37 @@
                     <strong>Blog Title</strong>: <%= user.blogname%><br>
                     <strong>Blog Description</strong>: <%= user.blogdescription%><br>
                 </p>
+                            <h4><span class="fa fa-laptop"></span> Posts</h4>  
+                <ul>
+                    <% for(var i=0; i<blogposts.length; i++) {%>
+                        <li>
+                            <% if (blogposts[i].image && blogposts[i].image.data.length > 0) {  %>
+                               <img src="<%= blogposts[i].image %>" style="height: 50px; width:50px"/>
+                            <% } %>
+                            <b> <%= blogposts[i].title %> </b>
+                            <span>Created At <%= blogposts[i].created_at %> </span>
+
+                            <div class="btn-group">
+                                <a class="btn" href="/editblog/<%= blogposts[i].blogname %>">Edit</a>
+                                <a class="btn"href="/deleteblog/<%= blogposts[i].id %>">Delete</a>
+                            </div>
+                       </li>
+                    <% } %>
+                </ul>
+
+                <h4><span class="fa fa-laptop"></span> Comments</h4>
+
+                 <ul>
+                    <% for(var i=0; i<blogposts.length; i++) {
+                        for(var j=0; j<blogposts[i].comments.length;j++){ %>
+                       <li>
+                            <div class="lead"><%= blogposts[i].comments[j].comment %> </div><em> Added by <%= blogposts[i].comments[j].user %> on <%= blogposts[i].comments[j].date %> </em>
+                            <a class="btn" href="/post/<%= blogposts[i].id %>">
+                                Related Post
+                            </a>
+                       </li>
+                    <% }} %>
+                </ul>
                 
         </div>
 

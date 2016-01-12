@@ -2,7 +2,7 @@ Blogger
 
 This is a basic Blogger clone to create a blog with comments.
 
-Time spent: <25>
+Time spent: <32>
 
 Features
 
@@ -10,12 +10,12 @@ Required
 
 * [X]  User can Signup, Login and Logout with input validation
 * [X]  Session and user accounts are persisted in a data store
-* [ ]  User can create and edit a blog post
-* [ ]   User can view blog posts with details on their Profile
-* [ ]   User can view anyone's blog with posts at the specified url
-* [ ]   User can comments on their blog posts on their Profile
-* [ ]   Logged In users can comment on any blog post
-* [ ]   Comments are viewable at the bottom of the associated blog post
+* [X]  User can create and edit a blog post
+* [X]   User can view blog posts with details on their Profile
+* [X]   User can view anyone's blog with posts at the specified url
+* [X]   User can comments on their blog posts on their Profile
+* [X]   Logged In users can comment on any blog post
+* [X]   Comments are viewable at the bottom of the associated blog post
 Optional
 
  User can specify a vanity url for their blog
